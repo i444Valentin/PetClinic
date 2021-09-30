@@ -1,0 +1,4 @@
+сен 30, 2021 6:38:19 PM com.application.DataBaseHandler.DataBaseHandler initConnection
+INFO: Connected to MySQL DataBase
+сен 30, 2021 6:39:13 PM com.application.DataBaseHandler.DataBaseHandler initConnection
+INFO: Connected to MySQL DataBase

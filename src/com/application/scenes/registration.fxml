@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="529.0" prefWidth="728.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.application.scenes.RegistrationController">
+   <children>
+      <Label layoutX="275.0" layoutY="34.0" text="Регистрация">
+         <font>
+            <Font name="System Bold" size="29.0" />
+         </font>
+      </Label>
+      <TabPane layoutX="50.0" layoutY="77.0" prefHeight="406.0" prefWidth="633.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab text="Как пациент">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Label layoutX="66.0" layoutY="37.0" text="Имя">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="65.0" layoutY="107.0" text="Фамилия">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="64.0" layoutY="189.0" text="Отчество">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="firstnameTextBox" layoutX="64.0" layoutY="73.0" prefHeight="25.0" prefWidth="160.0" />
+                        <TextField fx:id="lastnameTextBox" layoutX="66.0" layoutY="153.0" prefHeight="25.0" prefWidth="160.0" />
+                        <TextField fx:id="patronimycTextBox" layoutX="67.0" layoutY="233.0" prefHeight="25.0" prefWidth="160.0" />
+                        <Label layoutX="413.0" layoutY="37.0" text="Логин">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="412.0" layoutY="107.0" text="Пароль">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="411.0" layoutY="189.0" text="Подверждение пароля">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="loginTextField" layoutX="411.0" layoutY="73.0" prefHeight="25.0" prefWidth="160.0" />
+                        <PasswordField fx:id="passTextBox" layoutX="411.0" layoutY="153.0" prefHeight="25.0" prefWidth="161.0" />
+                        <PasswordField fx:id="confirmPassTextBox" layoutX="411.0" layoutY="232.0" prefHeight="25.0" prefWidth="161.0" />
+                        <Button fx:id="registerPacientButton" layoutX="209.0" layoutY="307.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="215.0" text="Зарегистрироваться">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab text="Как врач">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Label layoutX="66.0" layoutY="37.0" text="Имя">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="65.0" layoutY="107.0" text="Фамилия">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="64.0" layoutY="189.0" text="Отчество">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="firstnameTextBox1" layoutX="64.0" layoutY="73.0" prefHeight="25.0" prefWidth="141.0" />
+                        <TextField fx:id="lastnameTextBox1" layoutX="66.0" layoutY="153.0" prefHeight="25.0" prefWidth="140.0" />
+                        <TextField fx:id="patronimycTextBox1" layoutX="67.0" layoutY="233.0" prefHeight="25.0" prefWidth="137.0" />
+                        <Label layoutX="413.0" layoutY="37.0" text="Логин">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="412.0" layoutY="107.0" text="Пароль">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="411.0" layoutY="189.0" text="Подверждение пароля">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="loginTextField1" layoutX="411.0" layoutY="73.0" prefHeight="25.0" prefWidth="160.0" />
+                        <PasswordField fx:id="passTextBox1" layoutX="411.0" layoutY="153.0" prefHeight="25.0" prefWidth="161.0" />
+                        <PasswordField fx:id="confirmPassTextBox1" layoutX="411.0" layoutY="232.0" prefHeight="25.0" prefWidth="161.0" />
+                        <Button fx:id="registerDoctorButton" layoutX="209.0" layoutY="307.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="215.0" text="Зарегистрироваться">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Button>
+                        <Label layoutX="242.0" layoutY="37.0" text="Ваша должность">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="doctorEmployeeTextBox" layoutX="237.0" layoutY="73.0" prefHeight="25.0" prefWidth="147.0" />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</AnchorPane>
