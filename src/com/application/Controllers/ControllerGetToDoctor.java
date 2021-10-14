@@ -1,4 +1,4 @@
-package com.application.scenes;
+package com.application.Controllers;
 
 import com.application.DataBaseHandler.DataBaseHandler;
 import com.application.table_objects.ListDoctors;
@@ -19,7 +19,7 @@ public class ControllerGetToDoctor {
     private Button getDoctorButton;
 
     @FXML
-    private ComboBox<?> receptionStatusComboBox;
+    private ComboBox<String> receptionStatusComboBox;
 
     @FXML
     private TableView<ListDoctors> doctorsTable;

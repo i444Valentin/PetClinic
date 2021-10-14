@@ -1,7 +1,7 @@
 package com.application.DataBaseHandler;
 
 import com.application.objects.User;
-import com.application.scenes.LoggerCreating;
+import com.application.LoggerCreating;
 import com.application.table_objects.ListDoctors;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;

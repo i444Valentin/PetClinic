@@ -1,4 +1,4 @@
-package com.application.scenes;
+package com.application;
 
 import java.io.FileInputStream;
 import java.util.logging.LogManager;

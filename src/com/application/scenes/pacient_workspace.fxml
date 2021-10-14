@@ -9,10 +9,10 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="629.0" prefWidth="888.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.application.scenes.PacientWorkspaceController">
+<AnchorPane prefHeight="629.0" prefWidth="888.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.application.Controllers.PacientWorkspaceController">
     <children>
         <Button layoutX="736.0" layoutY="30.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="116.0" text="Выйти" />
-      <Button layoutX="651.0" layoutY="537.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="201.0" text="Записаться на прием..." />
+      <Button layoutX="651.0" layoutY="537.0" mnemonicParsing="false"  prefHeight="25.0" prefWidth="201.0" text="Записаться на прием..." />
       <TabPane layoutX="70.0" layoutY="77.0" prefHeight="451.0" prefWidth="782.0" style="-fx-background-color: lightgray;" tabClosingPolicy="UNAVAILABLE">
         <tabs>
           <Tab text="Главная">
@@ -102,15 +102,16 @@
             <content>
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="347.0" prefWidth="622.0">
                      <children>
-                        <TableView layoutX="14.0" layoutY="25.0" prefHeight="200.0" prefWidth="613.0">
+                        <TableView fx:id="receptionTableView" layoutX="14.0" layoutY="25.0" prefHeight="200.0" prefWidth="701.0">
                            <columns>
-                              <TableColumn prefWidth="116.0" text="Дата приема" />
-                              <TableColumn prefWidth="109.0" text="Статус приема" />
-                              <TableColumn minWidth="0.0" prefWidth="236.0" text="Врач" />
-                              <TableColumn prefWidth="134.0" text="Специальность" />
+                              <TableColumn fx:id="dateColumn" prefWidth="116.0" text="Дата приема" />
+                              <TableColumn fx:id="statusColumn" prefWidth="109.0" text="Статус приема" />
+                              <TableColumn fx:id="petColumn" prefWidth="75.0" text="Питомец" />
+                              <TableColumn fx:id="doctorColumn" minWidth="0.0" prefWidth="236.0" text="Врач" />
+                              <TableColumn fx:id="specilizationColumn" prefWidth="134.0" text="Специальность" />
                            </columns>
                         </TableView>
-                        <Button layoutX="645.0" layoutY="383.0" mnemonicParsing="false" text="Отменить прием" />
+                        <Button fx:id="cancelReceptionButton" layoutX="645.0" layoutY="383.0" mnemonicParsing="false" text="Отменить прием" />
                      </children>
                   </AnchorPane>
             </content>
@@ -119,13 +120,14 @@
               <content>
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
-                        <TableView layoutX="14.0" layoutY="25.0" prefHeight="200.0" prefWidth="766.0">
+                        <TableView fx:id="receptionHistoryTableView" layoutX="14.0" layoutY="25.0" prefHeight="200.0" prefWidth="766.0">
                           <columns>
-                            <TableColumn prefWidth="116.0" text="Дата приема" />
-                            <TableColumn prefWidth="109.0" text="Статус приема" />
-                              <TableColumn minWidth="0.0" prefWidth="198.0" text="Врач" />
-                              <TableColumn prefWidth="152.0" text="Специальность" />
-                              <TableColumn prefWidth="187.0" text="Статус проведения приема" />
+                            <TableColumn fx:id="hDateColumn" prefWidth="116.0" text="Дата приема" />
+                            <TableColumn fx:id="hStatusColumn" prefWidth="90.0" text="Статус приема" />
+                              <TableColumn fx:id="hPetColumn" prefWidth="61.0" text="Питомец" />
+                              <TableColumn fx:id="hDoctorColumn" minWidth="0.0" prefWidth="125.0" text="Врач" />
+                              <TableColumn fx:id="hSpecilizationColumn" prefWidth="116.0" text="Специальность" />
+                              <TableColumn fx:id="hDoneStatus" prefWidth="168.0" text="Статус проведения приема" />
                           </columns>
                         </TableView>
                      </children>

@@ -1,7 +1,9 @@
-package com.application.scenes;
+package com.application.Controllers;
 
 import com.application.DataBaseHandler.DataBaseHandler;
 import com.application.objects.User;
+import com.application.LoggerCreating;
+import com.application.scenes.SceneLoader;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
