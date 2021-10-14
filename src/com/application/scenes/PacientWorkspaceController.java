@@ -1,50 +1,55 @@
 package com.application.scenes;
 
 import com.application.DataBaseHandler.DataBaseHandler;
-import com.application.table_objects.WorkTable;
+import com.application.table_objects.ListDoctors;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableRow;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.scene.control.cell.TextFieldTableCell;
-import javafx.util.converter.IntegerStringConverter;
 
 import java.sql.ResultSet;
 
 public class PacientWorkspaceController {
     @FXML
-    private TableView<WorkTable> workTable;
+    private TableView<ListDoctors> workTable;
 
     @FXML
-    private TableColumn<WorkTable, Integer> idColumn;
+    private TableColumn<ListDoctors, Integer> idColumn;
     @FXML
-    private TableColumn<WorkTable, String> dateColumn;
-
-    @FXML
-    private TableColumn<WorkTable, String> FIOPacient;
+    private TableColumn<ListDoctors, String> dateColumn;
 
     @FXML
-    private TableColumn<WorkTable, String> petName;
+    private TableColumn<ListDoctors, String> FIOPacient;
 
     @FXML
-    private TableColumn<WorkTable, String> petBreed;
+    private TableColumn<ListDoctors, String> petName;
 
     @FXML
-    private TableColumn<WorkTable, String> petGender;
+    private TableColumn<ListDoctors, String> petBreed;
 
     @FXML
-    private TableColumn<WorkTable, String> FIODoctor;
+    private TableColumn<ListDoctors, String> petGender;
 
     @FXML
-    private TableColumn<WorkTable, String> employeeDoctor;
+    private TableColumn<ListDoctors, String> FIODoctor;
+
+    @FXML
+    private TableColumn<ListDoctors, String> employeeDoctor;
 
 
-    private ObservableList<WorkTable> wTable;
+    private ObservableList<ListDoctors> wTable;
     private DataBaseHandler dataBaseHandler;
+    private String currentAccount;
+
+    private static String usernameSing;
+    private static String passwordSing;
+
+    public static void sendUser(String username, String password) {
+        usernameSing = username;
+        passwordSing = password;
+    }
 
     /**
      * Основной метод программ JavaFX, выполняется всегда, когда запускается сцена этого контроллера
@@ -54,33 +59,11 @@ public class PacientWorkspaceController {
         wTable = FXCollections.observableArrayList();
         dataBaseHandler = DataBaseHandler.getInstance();
         loadData();
-        initializeColumns();
-
+//        initializeColumns();
+//
 
     }
 
-    private void saveData() {
-        int i = 0;
-        try {
-            for (i=0; i < wTable.size();i++){
-                dataBaseHandler.updateData(wTable.get(i),wTable.get(i).getId());
-            }
-        }catch (Exception e){
-            e.printStackTrace();
-            System.out.print(i);
-            System.out.println("Error occurred");
-
-
-        }
-        try {
-            for (int x = i;x< wTable.size();x++){
-                dataBaseHandler.insertData(wTable.get(x));
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-            System.out.println("Error occurred");
-        }
-    }
 
     /**
      * Производит начальную загрузку всех значении из базы данных
@@ -95,11 +78,8 @@ public class PacientWorkspaceController {
             int i = 0;
             while (resultSet.next()) {
 
-                ObservableList<WorkTable> row = FXCollections.observableArrayList();
+                ObservableList<ListDoctors> row = FXCollections.observableArrayList();
 
-                row.add(new WorkTable(resultSet.getInt(1),resultSet.getString(2), resultSet.getString(3), resultSet.getString(4),
-                        resultSet.getString(5), resultSet.getString(6), resultSet.getString(7),
-                        resultSet.getString(8)));
                 wTable.add(row.get(i));
                 i++;
                 isMovedCursor = true;
@@ -107,7 +87,7 @@ public class PacientWorkspaceController {
             if (isMovedCursor){
                 workTable.setItems(wTable);
             }else {
-                wTable.add(new WorkTable());
+//                wTable.add(new ListDoctors());
                 workTable.setItems(wTable);
             }
 

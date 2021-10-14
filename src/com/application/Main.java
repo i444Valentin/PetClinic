@@ -11,7 +11,7 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception{
         Parent root = FXMLLoader.load(getClass().getResource("scenes/welcome_scene.fxml"));
-        primaryStage.setTitle("Учет услуг ветеринарной клиники");
+        primaryStage.setTitle("Ветеринарная клиника");
         primaryStage.setScene(new Scene(root));
         primaryStage.setMaximized(false);
         primaryStage.setResizable(false);

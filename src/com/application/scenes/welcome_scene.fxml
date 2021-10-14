@@ -4,55 +4,36 @@
 <?import javafx.scene.control.Hyperlink?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
-<?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.TextField?>
-<?import javafx.scene.control.ToggleGroup?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="569.0" prefWidth="819.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.application.scenes.AuthorisationController">
+<AnchorPane prefHeight="477.0" prefWidth="532.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.application.scenes.WelcomeController">
    <children>
-      <RadioButton fx:id="asPacientToggleButton" layoutX="69.0" layoutY="363.0" mnemonicParsing="false" text="Войти как пациент">
-         <font>
-            <Font size="18.0" />
-         </font>
-         <toggleGroup>
-            <ToggleGroup fx:id="singInAs" />
-         </toggleGroup>
-      </RadioButton>
-      <RadioButton fx:id="asDoctorToggleButton" layoutX="301.0" layoutY="363.0" mnemonicParsing="false" text="Войти как врач" toggleGroup="$singInAs">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </RadioButton>
-      <RadioButton fx:id="asAdminToggleButton" layoutX="505.0" layoutY="363.0" mnemonicParsing="false" text="Войти как администратор" toggleGroup="$singInAs">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </RadioButton>
-      <Button fx:id="loginButton" layoutX="237.0" layoutY="436.0" mnemonicParsing="false" onAction="#loginButtonClick" prefHeight="39.0" prefWidth="128.0" text="Войти">
+      <Button fx:id="loginButton" layoutX="210.0" layoutY="313.0" mnemonicParsing="false" onAction="#loginButtonClick" prefHeight="39.0" prefWidth="128.0" text="Войти">
          <font>
             <Font size="18.0" />
          </font>
       </Button>
-      <Label layoutX="380.0" layoutY="128.0" text="Логин">
+      <Label layoutX="249.0" layoutY="114.0" text="Логин">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <Label layoutX="375.0" layoutY="240.0" text="Пароль">
+      <Label layoutX="244.0" layoutY="204.0" text="Пароль">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <TextField fx:id="loginTextBox" layoutX="331.0" layoutY="186.0" />
-      <PasswordField fx:id="passTextBox" layoutX="331.0" layoutY="295.0" />
-      <Label layoutX="242.0" layoutY="21.0" text="Ветеринарная клиника">
+      <TextField fx:id="loginTextBox" layoutX="201.0" layoutY="153.0" />
+      <PasswordField fx:id="passTextBox" layoutX="200.0" layoutY="239.0" />
+      <Label layoutX="110.0" layoutY="27.0" text="Ветеринарная клиника">
          <font>
             <Font name="System Bold" size="29.0" />
          </font>
       </Label>
-      <Hyperlink fx:id="registerLink" layoutX="685.0" layoutY="525.0" text="Зарегистрироваться" />
-      <Label layoutX="498.0" layoutY="528.0" text="Отсутствуйте в поликлинике?" />
+      <Hyperlink fx:id="registerLink" layoutX="408.0" layoutY="435.0" onAction="#registerButtonClick" text="Зарегистрироваться" />
+      <Label layoutX="236.0" layoutY="438.0" text="Отсутствуйте в поликлинике?" />
+      <Label fx:id="loginWarningLabel" layoutX="139.0" layoutY="281.0" prefHeight="17.0" prefWidth="270.0" text="Пользователь не найден или пароль неверный." visible="false" />
    </children>
 </AnchorPane>

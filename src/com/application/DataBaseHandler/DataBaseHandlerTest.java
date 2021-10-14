@@ -1,6 +1,8 @@
 package com.application.DataBaseHandler;
 
-import com.application.table_objects.WorkTable;
+import com.application.objects.User;
+
+import java.sql.Date;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -10,7 +12,6 @@ class DataBaseHandlerTest {
     void initConnection() {
         DataBaseHandler dataBaseHandler = new DataBaseHandler();
         assertTrue(dataBaseHandler.initConnection());
-
     }
 
     @org.junit.jupiter.api.Test
@@ -19,9 +20,10 @@ class DataBaseHandlerTest {
     }
 
     @org.junit.jupiter.api.Test
-    void insertTestData() throws Exception{
-        WorkTable workTable = new WorkTable(3,"2020-10-10","Иванов Иван Иванович", "Свячка", "Кошка", "мужской", "Алексеев Алексей Алексеевич","Ветеринар");
-        DataBaseHandler dataBaseHandler =  DataBaseHandler.getInstance();
-        dataBaseHandler.insertData(workTable);
+    void registerUser() throws Exception{
+        User user = new User("Иванов","Иван","Иванович", Date.valueOf("2000-01-01"), 9545633469651231L,"г. Москва, ул.Садовая 11",true,"ivanov123","12345");
+        DataBaseHandler dataBaseHandler = DataBaseHandler.getInstance();
+        boolean res = dataBaseHandler.userRegister(user);
+        assertTrue(res);
     }
 }
