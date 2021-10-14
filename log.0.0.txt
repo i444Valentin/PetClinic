@@ -139,3 +139,5 @@ java.sql.SQLIntegrityConstraintViolationException: Duplicate entry 'ivanov123' f
 
 окт 14, 2021 5:21:08 PM javafx.fxml.FXMLLoader$ValueElement processValue
 WARNING: Loading FXML document with JavaFX API of version 8.0.171 by JavaFX runtime of version 8.0.152
+окт 14, 2021 6:59:51 PM javafx.fxml.FXMLLoader$ValueElement processValue
+WARNING: Loading FXML document with JavaFX API of version 8.0.171 by JavaFX runtime of version 8.0.152

@@ -83,15 +83,6 @@ public class DataBaseHandler extends Configs {
         }
     }
 
-    /**
-     * Метод возвращающий загруженные данные из базы данных
-     * @return - даннные из базы данных
-     * @throws Exception - исключение, если не удается обработать запрос
-     */
-    public ResultSet getData() throws Exception{
-        String sql= "SELECT * FROM `Услуги`";
-        return getDBConnection().createStatement().executeQuery(sql);
-    }
 
     public ResultSet getUser(User user){
         String sql = "SELECT login,password FROM Pacient WHERE login=? AND password=?";
@@ -112,64 +103,6 @@ public class DataBaseHandler extends Configs {
         }
     }
 
-    /**
-     * Метод, обновляющий данные в базе данных
-     *
-     * @param id - ид строки для обновления
-     * @param workTable - объект, который содержит поля и к ним можно получить доступ через метод get
-     * @return - статус выполнения операции,
-     *  <code>true<code/> - успех, <code>false</code> - неудача
-     *
-     * @throws Exception - исключение, если что-то поидет не так
-     */
-
-//    public boolean updateData(ListDoctors workTable, int id) throws Exception{
-//        String sql = "UPDATE `Услуги` SET idУслуги=?, Дата=?, ФИОПациента=?, ИмяПитомца=?, ПородаПитомца=?,ПолПитомца=?, ФИОВетеринара=?, ДолжностьВетеринара=? WHERE idУслуги=?";
-//
-//
-//        PreparedStatement preparedStatement = getDBConnection().prepareStatement(sql);
-//
-//        preparedStatement.setInt(1, workTable.getId());
-//        preparedStatement.setString(2, workTable.getDate());
-//        preparedStatement.setString(3, workTable.getFIOPacient());
-//        preparedStatement.setString(4, workTable.getPetName());
-//        preparedStatement.setString(5, workTable.getPetBreed());
-//        preparedStatement.setString(6, workTable.getPetGender());
-//        preparedStatement.setString(7, workTable.getFIODoctor());
-//        preparedStatement.setString(8, workTable.getEmployeeDoctor());
-//        preparedStatement.setInt(9,id);
-//
-//        preparedStatement.executeUpdate();
-//
-//
-//        return true;
-//    }
-
-    /**
-     * Метод, добавляющий новые данные в таблицу
-     *
-     * @param workTable - объект, который содержит поля и к ним можно получить доступ через метод get
-     * @return - статус выполнения операции,
-     * <code>true<code/> - успех, <code>false</code> - неудача
-     * @throws Exception
-     */
-//    public boolean insertData(ListDoctors workTable) throws Exception{
-//        String sql = "INSERT INTO `Услуги` (idУслуги, Дата, ФИОПациента, ИмяПитомца, ПородаПитомца, ПолПитомца, ФИОВетеринара, ДолжностьВетеринара) VALUES (?,?,?,?,?,?,?,?)";
-//
-//        PreparedStatement preparedStatement = getDBConnection().prepareStatement(sql);
-//
-//        preparedStatement.setInt(1, workTable.getId());
-//        preparedStatement.setString(2, workTable.getDate());
-//        preparedStatement.setString(3, workTable.getFIOPacient());
-//        preparedStatement.setString(4, workTable.getPetName());
-//        preparedStatement.setString(5, workTable.getPetBreed());
-//        preparedStatement.setString(6, workTable.getPetGender());
-//        preparedStatement.setString(7, workTable.getFIODoctor());
-//        preparedStatement.setString(8, workTable.getEmployeeDoctor());
-//
-//        preparedStatement.executeUpdate();
-//        return true;
-//    }
 
     public boolean userRegister(User user) {
         try{
